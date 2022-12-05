@@ -17,10 +17,13 @@
             android:name=".PelangganActivity"
             android:exported="false" />
         <activity
+            android:name=".ProdukActivity"
+            android:exported="false" />
+        <activity
             android:name=".TransaksiActivity"
             android:exported="false" />
         <activity
-            android:name=".ProdukActivity"
+            android:name=".fragments.TransaksiActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
