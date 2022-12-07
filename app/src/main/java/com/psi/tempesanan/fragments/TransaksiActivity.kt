@@ -18,9 +18,9 @@ class TransaksiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_transaksi)
 
-         val btntbh: Button = findViewById(R.id.button_create_transaksi)
+         val button = findViewById<Button>(R.id.button_create_transaksi)
 
-         btntbh.setOnClickListener{
+         button.setOnClickListener{
              val intent = Intent(this, EditTransaksiActivity::class.java)
              startActivity(intent)
          }
