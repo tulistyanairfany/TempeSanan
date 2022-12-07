@@ -14,13 +14,19 @@
         android:theme="@style/Theme.TempeSanan"
         tools:targetApi="31">
         <activity
-            android:name=".EditTransaksiActivity"
+            android:name=".fragments.EditTransaksiActivity"
             android:exported="false" />
         <activity
-            android:name=".EditPelangganActivity"
+            android:name=".fragments.EditPelangganActivity"
             android:exported="false" />
         <activity
             android:name=".fragments.TransaksiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.ProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.PelangganActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"

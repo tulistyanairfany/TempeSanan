@@ -28,12 +28,25 @@ class BerandaFragment : Fragment() {
                 startActivity(intent)
             }
         }
-
+        val listnr2: View.OnClickListener = object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val intent2 = Intent(activity, ProdukActivity::class.java)
+                startActivity(intent2)
+            }
+        }
+        val listnr3: View.OnClickListener = object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val intent3 = Intent(activity, PelangganActivity::class.java)
+                startActivity(intent3)
+            }
+        }
         val btn = v.findViewById<View>(R.id.btntransaksi) as Button
         btn.setOnClickListener(listnr)
+        val btn2 = v.findViewById<View>(R.id.btnproduk) as Button
+        btn2.setOnClickListener(listnr2)
+        val btn3 = v.findViewById<View>(R.id.btnpelanggan) as Button
+        btn3.setOnClickListener(listnr3)
         return v
-
-
     }
 
 }
