@@ -19,7 +19,6 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
         btnIntent.setOnClickListener(this)
 
     }
-
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {

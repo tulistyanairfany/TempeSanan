@@ -9,4 +9,5 @@ class EditTransaksiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_transaksi)
     }
+
 }

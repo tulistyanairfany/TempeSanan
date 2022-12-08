@@ -30,5 +30,4 @@ class PelangganActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
-
 }
