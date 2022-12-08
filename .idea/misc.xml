@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/TempeSanan/app/src/main/res/layout/activity_produk.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_edit_pelanggan.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_edit_pelanggan.xml" value="0.18" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_edit_produk.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_edit_transaksi.xml" value="0.1859375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_main.xml" value="0.18" />
@@ -12,7 +12,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_produk.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_splash_screen.xml" value="0.1859375" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_transaksi.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_transaksi.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/adapter_main.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/fragment_alamat.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/fragment_beranda.xml" value="0.2" />

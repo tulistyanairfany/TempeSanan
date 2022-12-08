@@ -12,7 +12,7 @@ import com.psi.tempesanan.fragments.EditTransaksiActivity as TempesananFragments
 class TransaksiActivity : AppCompatActivity(), View.OnClickListener {
 
 
-    private lateinit var btnIntent : Button
+     private lateinit var btnIntent : Button
 
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
