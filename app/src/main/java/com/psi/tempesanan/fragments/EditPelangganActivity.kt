@@ -9,4 +9,5 @@ class EditPelangganActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_pelanggan)
     }
+
 }
