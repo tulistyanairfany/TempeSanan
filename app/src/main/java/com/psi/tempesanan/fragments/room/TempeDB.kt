@@ -3,6 +3,7 @@ package com.psi.tempesanan.fragments.room
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
+import androidx.room.RoomDatabase
 
 
 @Database(
@@ -11,7 +12,7 @@ import androidx.room.Room
 )
 
 abstract class TempeDB {
-    abstract fun noteDao() : TempeDao
+    abstract fun TempeDao() : TempeDao
 
     companion object {
 
@@ -31,5 +32,4 @@ abstract class TempeDB {
         ).build()
 
     }
-}
 }

@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_edit_produk.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import com.psi.tempesanan.fragments.room.TempeDao
 
 class EditProdukActivity : AppCompatActivity() {
 
@@ -75,12 +76,12 @@ class EditProdukActivity : AppCompatActivity() {
             }
         }
 
-        private fun getNote(){
+        private fun getTempe(){
             tempeId = intent.getIntExtra("tempe_id", 0)
             CoroutineScope(Dispatchers.IO).launch {
                 val tempes = db.TempeDao().getTempe(tempeId).get(0)
                 edit_namaproduk.setText( tempes.title )
-                edit_hargaproduk.setText( tempes.note )
+                edit_hargaproduk.setText( tempes.tempe )
             }
         }
 
@@ -93,4 +94,4 @@ class EditProdukActivity : AppCompatActivity() {
             return intent.getIntExtra("intent_type", 0)
         }
     }
-}
+

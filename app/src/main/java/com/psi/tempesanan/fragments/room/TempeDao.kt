@@ -5,12 +5,12 @@ import androidx.room.*
 @Dao
 interface TempeDao {
     @Insert
-    suspend fun addNote(tempe: Tempe)
+    suspend fun addTempe(tempe: Tempe)
 
     @Query("SELECT * FROM tempe ORDER BY id DESC")
-    suspend fun getNotes() : List<Tempe>
+    suspend fun getTempes() : List<Tempe>
 
-    @Query("SELECT * FROM tempe WHERE id=:note_id")
+    @Query("SELECT * FROM tempe WHERE id=:tempe_id")
     suspend fun getTempe(tempe_id: Int) : List<Tempe>
 
     @Update

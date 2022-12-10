@@ -84,11 +84,11 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-    private fun intentEdit(intent_type: Int, note_id: Int) {
+    private fun intentEdit(intent_type: Int, tempe_id: Int) {
         startActivity(
             Intent(this, EditProdukActivity::class.java)
                 .putExtra("intent_type", intent_type)
-                .putExtra("note_id", note_id)
+                .putExtra("tempe_id", tempe_id)
         )
 
     }
@@ -103,7 +103,7 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
             }
             setPositiveButton("Hapus") { dialogInterface, i ->
                 CoroutineScope(Dispatchers.IO).launch {
-                    db.noteDao().deleteTempe(tempe)
+                    db.tempeDao().deleteTempe(tempe)
                     dialogInterface.dismiss()
                     loadData()
                 }

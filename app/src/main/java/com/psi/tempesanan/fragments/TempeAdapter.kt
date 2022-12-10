@@ -4,14 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.lazday.kotlinroommvvm.R
-import com.lazday.kotlinroommvvm.room.Note
 import com.psi.tempesanan.R
 import com.psi.tempesanan.fragments.room.Tempe
-import kotlinx.android.synthetic.main.adapter_main.view.*
 import kotlinx.android.synthetic.main.adapter_mainbarang.view.*
 
-class TempeAdapter (var notes: ArrayList<Tempe>, var listener: OnAdapterListener) :
+class TempeAdapter (var tempes: ArrayList<Tempe>, var listener: OnAdapterListener) :
     RecyclerView.Adapter<TempeAdapter.TempeViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TempeViewHolder {
@@ -25,7 +22,7 @@ class TempeAdapter (var notes: ArrayList<Tempe>, var listener: OnAdapterListener
         )
     }
 
-    override fun getItemCount() = notes.size
+    override fun getItemCount() = tempes.size
 
     override fun onBindViewHolder(holder: TempeViewHolder, position: Int) {
         val tempe = tempes[position]
