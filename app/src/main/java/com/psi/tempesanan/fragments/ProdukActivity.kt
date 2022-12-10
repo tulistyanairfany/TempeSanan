@@ -41,7 +41,7 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun loadData(){
         CoroutineScope(Dispatchers.IO).launch {
-            tempeAdapter.setData(db.tempeDao().getTempes())
+            tempeAdapter.setData(db.TempeDao().getTempes())
             withContext(Dispatchers.Main) {
                 tempeAdapter.notifyDataSetChanged()
             }
@@ -78,7 +78,7 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
 
             })
 
-        list_tempe.apply {
+        list_produk.apply {
             layoutManager = LinearLayoutManager(applicationContext)
             adapter = tempeAdapter
         }
@@ -103,7 +103,7 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
             }
             setPositiveButton("Hapus") { dialogInterface, i ->
                 CoroutineScope(Dispatchers.IO).launch {
-                    db.tempeDao().deleteTempe(tempe)
+                    db.TempeDao().deleteTempe(tempe)
                     dialogInterface.dismiss()
                     loadData()
                 }

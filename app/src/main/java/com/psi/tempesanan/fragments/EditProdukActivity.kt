@@ -52,7 +52,7 @@ class EditProdukActivity : AppCompatActivity() {
         private fun setupLstener(){
             button_save_produk.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
-                    db.tempeDao().addTempe(
+                    db.TempeDao().addTempe(
                         Tempe(
                             0,
                             edit_namaproduk.text.toString(),
@@ -64,7 +64,7 @@ class EditProdukActivity : AppCompatActivity() {
             }
             button_update_produk.setOnClickListener {
                 CoroutineScope(Dispatchers.IO).launch {
-                    db.tempeDao().updateTempe(
+                    db.TempeDao().updateTempe(
                         Tempe(
                             tempeId,
                             edit_namaproduk.text.toString(),
@@ -80,8 +80,8 @@ class EditProdukActivity : AppCompatActivity() {
             tempeId = intent.getIntExtra("tempe_id", 0)
             CoroutineScope(Dispatchers.IO).launch {
                 val tempes = db.TempeDao().getTempe(tempeId).get(0)
-                edit_namaproduk.setText( tempes.title )
-                edit_hargaproduk.setText( tempes.tempe )
+                edit_namaproduk.setText( tempes.namabarang )
+                edit_hargaproduk.setText( tempes.harga )
             }
         }
 
