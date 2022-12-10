@@ -16,7 +16,6 @@
         <activity
             android:name=".fragments.EditProdukActivity"
             android:exported="false" />
-
         <activity
             android:name=".fragments.EditTransaksiActivity"
             android:exported="false" />

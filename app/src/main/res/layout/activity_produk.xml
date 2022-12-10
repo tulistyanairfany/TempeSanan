@@ -25,11 +25,9 @@
         android:id="@+id/list_produk"
         android:layout_width="340dp"
         android:layout_height="500dp"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="30dp"
-
-
-        />
+        android:layout_marginTop="100dp"
+        tools:listitem="@layout/adapter_mainbarang" />
 
     <Button
         android:id="@+id/button_create_produk"
