@@ -29,7 +29,7 @@ class EditProdukActivity : AppCompatActivity() {
         if (intent.getParcelableExtra<Tempe>(EDIT_PRODUK_EXTRA) != null){
             button_hapus_produk.visibility = View.VISIBLE
             isUpdate = true
-            tempe = intent.getParcelableExtra(EDIT_PRODUK_EXTRA)
+            tempe = intent.getParcelableExtra(EDIT_PRODUK_EXTRA)!!
             edit_namaproduk.setText(tempe.namabarang)
             edit_hargaproduk.setText(tempe.hargabarang)
 
