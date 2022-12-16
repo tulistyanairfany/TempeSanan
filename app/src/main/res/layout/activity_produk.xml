@@ -7,6 +7,17 @@
     tools:context=".fragments.ProdukActivity">
 
     <TextView
+        android:id="@+id/text_view_produk_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note Empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/produk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,12 +33,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_produk"
+        android:id="@+id/recycler_view_main"
         android:layout_width="340dp"
         android:layout_height="500dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="100dp"
-        tools:listitem="@layout/adapter_mainbarang" />
+        tools:listitem="@layout/list_item" />
 
     <Button
         android:id="@+id/button_create_produk"

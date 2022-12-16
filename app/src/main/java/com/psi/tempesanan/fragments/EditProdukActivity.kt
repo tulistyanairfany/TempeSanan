@@ -3,95 +3,82 @@ package com.psi.tempesanan.fragments
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.psi.tempesanan.R
-import com.psi.tempesanan.fragments.room.Constant
-import com.psi.tempesanan.fragments.room.Tempe
-import com.psi.tempesanan.fragments.room.TempeDB
+import com.psi.tempesanan.fragments.db.TempeDao
+import com.psi.tempesanan.fragments.db.TempeRoomDatabase
+import com.psi.tempesanan.fragments.model.Tempe
 import kotlinx.android.synthetic.main.activity_edit_produk.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import com.psi.tempesanan.fragments.room.TempeDao
 
 class EditProdukActivity : AppCompatActivity() {
 
+    val EDIT_PRODUK_EXTRA = "edit_produk_extra"
+    private lateinit var tempe: Tempe
+    private var isUpdate = false
+    private lateinit var database: TempeRoomDatabase
+    private lateinit var dao: TempeDao
 
-        private val db by lazy { TempeDB(this) }
-        private var tempeId = 0
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_edit_produk)
-            setupView()
-            setupLstener()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_edit_produk)
+
+        database = TempeRoomDatabase.getDatabase(applicationContext)
+        dao = database.getTempeDao()
+
+        if (intent.getParcelableExtra<Tempe>(EDIT_PRODUK_EXTRA) != null){
+            button_hapus_produk.visibility = View.VISIBLE
+            isUpdate = true
+            tempe = intent.getParcelableExtra(EDIT_PRODUK_EXTRA)
+            edit_namaproduk.setText(tempe.namabarang)
+            edit_hargaproduk.setText(tempe.hargabarang)
+
+            edit_namaproduk.setSelection(tempe.namabarang.length)
+
         }
 
-        private fun setupView(){
-            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-            when (intentType()) {
-                Constant.TYPE_CREATE -> {
-                    supportActionBar!!.title = "BUAT BARU"
-                    button_save_produk.visibility = View.VISIBLE
-                    button_update_produk.visibility = View.GONE
-                }
-                Constant.TYPE_READ -> {
-                    supportActionBar!!.title = "BACA"
-                    button_save_produk.visibility = View.GONE
-                    button_update_produk.visibility = View.GONE
-                    getTempe()
-                }
-                Constant.TYPE_UPDATE -> {
-                    supportActionBar!!.title = "EDIT"
-                    button_save_produk.visibility = View.GONE
-                    button_update_produk.visibility = View.VISIBLE
-                    getTempe()
-                }
-            }
-        }
+        button_save_produk.setOnClickListener {
+            val namabarang = edit_namaproduk.text.toString()
+            val hargabarang = edit_hargaproduk.text.toString()
 
-        private fun setupLstener(){
-            button_save_produk.setOnClickListener {
-                CoroutineScope(Dispatchers.IO).launch {
-                    db.TempeDao().addTempe(
+            if (namabarang.isEmpty() && hargabarang.isEmpty()) {
+                Toast.makeText(
+                    applicationContext,
+                    "Kamu Belum Memasukkan Nama Barang",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                if (isUpdate) {
+                    saveProduk(
                         Tempe(
-                            0,
-                            edit_namaproduk.text.toString(),
-                            edit_hargaproduk.text.toString()
+                            id = tempe.id,
+                            namabarang = namabarang,
+                            hargabarang = hargabarang
                         )
                     )
-                    finish()
+                } else {
+                    saveProduk(Tempe(namabarang = namabarang, hargabarang = hargabarang))
                 }
             }
-            button_update_produk.setOnClickListener {
-                CoroutineScope(Dispatchers.IO).launch {
-                    db.TempeDao().updateTempe(
-                        Tempe(
-                            tempeId,
-                            edit_namaproduk.text.toString(),
-                            edit_hargaproduk.text.toString()
-                        )
-                    )
-                    finish()
-                }
-            }
-        }
-
-        private fun getTempe(){
-            tempeId = intent.getIntExtra("tempe_id", 0)
-            CoroutineScope(Dispatchers.IO).launch {
-                val tempes = db.TempeDao().getTempe(tempeId).get(0)
-                edit_namaproduk.setText( tempes.namabarang )
-                edit_hargaproduk.setText( tempes.harga )
-            }
-        }
-
-        override fun onSupportNavigateUp(): Boolean {
             finish()
-            return super.onSupportNavigateUp()
+
         }
 
-        private fun intentType(): Int {
-            return intent.getIntExtra("intent_type", 0)
-        }
     }
 
+    private fun saveProduk(tempe: Tempe) {
+        if (dao.getById(tempe.id).isEmpty()){
+
+            dao.insert(tempe)
+        }
+        else{
+            dao.update(tempe)
+        }
+        Toast.makeText(applicationContext, "BERHASIL DISIMPAN", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun deleteProduk(tempe: Tempe){
+        dao.delete(tempe)
+        Toast.makeText(applicationContext, "BERHASIL DIHAPUS", Toast.LENGTH_SHORT).show()
+    }
+}

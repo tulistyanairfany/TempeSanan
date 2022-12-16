@@ -9,7 +9,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_pelanggan.xml" value="0.1859375" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_produk.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_produk.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_splash_screen.xml" value="0.1859375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/activity_transaksi.xml" value="0.1" />
@@ -21,6 +21,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/fragment_tentang.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/halaman_login.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/halaman_register.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/list_item.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/layout/splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TempeSanan/app/src/main/res/menu/menu.xml" value="0.14629629629629629" />
       </map>
