@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_nomorpelanggan"
+        android:id="@+id/edit_nomortelp"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
@@ -88,7 +88,7 @@
 
     <Button
         android:visibility="gone"
-        android:id="@+id/button_update_pelanggan"
+        android:id="@+id/button_hapus_pelanggan"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginLeft="160dp"
@@ -99,7 +99,7 @@
         android:paddingTop="8dp"
         android:paddingRight="16dp"
         android:paddingBottom="5dp"
-        android:text="Update"
+        android:text="Hapus"
         android:textColor="#FFFFFF" />
 
 

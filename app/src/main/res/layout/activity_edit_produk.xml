@@ -94,6 +94,7 @@
         android:layout_marginLeft="160dp"
         android:layout_marginTop="540dp"
         android:background="#816A2F"
+        android:visibility="gone"
         android:fontFamily="@font/poppins_semibold"
         android:paddingLeft="16dp"
         android:paddingTop="8dp"

@@ -63,8 +63,13 @@ class EditProdukActivity : AppCompatActivity() {
             finish()
 
         }
+        button_hapus_produk.setOnClickListener {
+            deleteProduk(tempe)
+            finish()
+        }
 
     }
+
 
     private fun saveProduk(tempe: Tempe) {
         if (dao.getById(tempe.id).isEmpty()){

@@ -54,15 +54,12 @@ class ProdukActivity : AppCompatActivity(), View.OnClickListener {
     private  fun setupRecycleView(listItems : ArrayList<Tempe>) {
         recycler_view_main.apply {
             adapter = ProdukAdapter(listItems, object : ProdukAdapter.TempeListener{
-                fun OnItemClick(tempe: Tempe) {
+                override fun OnItemClicked(tempe: Tempe) {
                     val intent = Intent(this@ProdukActivity, EditProdukActivity::class.java)
                     intent.putExtra(EditProdukActivity(). EDIT_PRODUK_EXTRA, tempe)
                     startActivity(intent)
                 }
 
-                override fun OnItemClicked(tempe: Tempe) {
-                    TODO("Not yet implemented")
-                }
             })
 
             layoutManager = LinearLayoutManager(this@ProdukActivity)

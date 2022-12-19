@@ -7,12 +7,12 @@ import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
 //Nama Entity spesifik tabel
-@Entity (tableName = "tabelproduk")
+@Entity(tableName = "tabelpelanggan")
 
 @Parcelize
-data class Tempe (
+data class Pelanggan (
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") var id: Int = 0,
-            @ColumnInfo(name = "namabarang") var namabarang: String = "",
-                    @ColumnInfo(name = "hargabarang") var hargabarang: String = ""
+    @ColumnInfo(name = "namapelanggan") var namapelanggan: String = "",
+    @ColumnInfo(name = "nomortelp") var nomortelp: String = ""
     ) : Parcelable {
-}
+    }
