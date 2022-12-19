@@ -49,33 +49,31 @@
         android:layout_marginTop="200dp"
         android:background="@color/purple_500" />
 
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:entries="@array/city_list" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="258dp"
+        android:onClick="getValues"
+        android:text="Get Values" />
+
     <TextView
+        android:layout_marginTop="350dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="260dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Nama Customer"
-        android:textColor="#B69C59"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_nomortransaksi"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="300dp"
-        android:background="@color/purple_500" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="360dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Barang"
         android:textColor="#B69C59"
@@ -131,7 +129,7 @@
         android:textColor="#FFFFFF" />
 
     <Button
-        android:visibility="gone"
+
         android:id="@+id/button_update_transaksi"
         android:layout_width="100dp"
         android:layout_height="40dp"

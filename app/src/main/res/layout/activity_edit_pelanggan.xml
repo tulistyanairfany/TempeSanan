@@ -72,7 +72,7 @@
         android:background="@color/purple_500" />
 
     <Button
-        android:id="@+id/button_create_pelanggan"
+        android:id="@+id/button_save_pelanggan"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginLeft="160dp"

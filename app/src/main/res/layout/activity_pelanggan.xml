@@ -7,6 +7,17 @@
     tools:context=".fragments.PelangganActivity">
 
     <TextView
+        android:id="@+id/text_view_pelanggan_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note Empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/pelanggan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_pelanggan"
+        android:id="@+id/recycler_view_pelanggan"
         android:layout_width="340dp"
         android:layout_height="500dp"
         android:layout_marginLeft="30dp"
@@ -42,7 +53,7 @@
         android:paddingTop="8dp"
         android:paddingRight="16dp"
         android:paddingBottom="5dp"
-        android:text="LIHAT"
+        android:text="TAMBAH"
         android:textColor="#FFFFFF" />
 
 

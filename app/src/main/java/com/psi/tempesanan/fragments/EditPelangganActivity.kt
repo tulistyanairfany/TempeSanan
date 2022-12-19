@@ -9,7 +9,6 @@ import com.psi.tempesanan.fragments.db.PelangganDao
 import com.psi.tempesanan.fragments.db.TempeDao
 import com.psi.tempesanan.fragments.db.TempeRoomDatabase
 import com.psi.tempesanan.fragments.model.Pelanggan
-import com.psi.tempesanan.fragments.model.Tempe
 import kotlinx.android.synthetic.main.activity_edit_pelanggan.*
 import kotlinx.android.synthetic.main.activity_edit_produk.*
 
@@ -28,17 +27,17 @@ class EditPelangganActivity : AppCompatActivity() {
         database = TempeRoomDatabase.getDatabase(applicationContext)
         dao = database.getPelangganDao()
 
-        if (intent.getParcelableExtra<Tempe>(EDIT_PELANGGAN_EXTRA) != null){
+        if (intent.getParcelableExtra<Pelanggan>(EDIT_PELANGGAN_EXTRA) != null){
             button_hapus_pelanggan.visibility = View.VISIBLE
             isUpdate = true
             pelanggan = intent.getParcelableExtra(EDIT_PELANGGAN_EXTRA)!!
-            edit_namaproduk.setText(pelanggan.namapelanggan)
-            edit_hargaproduk.setText(pelanggan.nomortelp)
+            edit_namapelanggan.setText(pelanggan.namapelanggan)
+            edit_nomortelp.setText(pelanggan.nomortelp)
 
-            edit_namaproduk.setSelection(pelanggan.namapelanggan.length)
+            edit_namapelanggan.setSelection(pelanggan.namapelanggan.length)
 
         }
-        button_save_produk.setOnClickListener {
+        button_save_pelanggan.setOnClickListener {
             val namapelanggan = edit_namapelanggan.text.toString()
             val nomortelp = edit_nomortelp.text.toString()
 

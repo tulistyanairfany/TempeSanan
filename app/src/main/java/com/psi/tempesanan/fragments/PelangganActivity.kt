@@ -27,35 +27,6 @@ class PelangganActivity : AppCompatActivity(), View.OnClickListener {
         btnIntent = findViewById(R.id.button_create_pelanggan)
         btnIntent.setOnClickListener(this)
     }
-//
-    private fun getTabelPelangganData() {
-        val database = TempeRoomDatabase.getDatabase(applicationContext)
-        val dao = database.getPelangganDao()
-        val listItems = arrayListOf<Pelanggan>()
-        listItems.addAll(dao.getAll())
-        setupRecycleView(listItems)
-        if (listItems.isNotEmpty()){
-            text_view_produk_empty.visibility = View.GONE
-        }
-        else {
-            text_view_produk_empty.visibility = View.VISIBLE
-        }
-    }
-
-    private fun setupRecycleView(listItems: ArrayList<Pelanggan>) {
-        recycler_view_main.apply {
-            adapter = PelangganAdapter(listItems, object : PelangganAdapter.PelangganListener{
-                override fun OnItemClicked(pelanggan: Pelanggan) {
-                    val intent = Intent(this@PelangganActivity, EditPelangganActivity::class.java)
-                    intent.putExtra(EditProdukActivity(). EDIT_PRODUK_EXTRA, pelanggan)
-                    startActivity(intent)
-                }
-
-            })
-
-            layoutManager = LinearLayoutManager(this@PelangganActivity)
-        }
-    }
 
     override fun onClick(v: View?) {
         if (v != null) {
@@ -67,6 +38,37 @@ class PelangganActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+//
+    private fun getTabelPelangganData() {
+        val database = TempeRoomDatabase.getDatabase(applicationContext)
+        val dao = database.getPelangganDao()
+        val listItems = arrayListOf<Pelanggan>()
+        listItems.addAll(dao.getAll())
+        setupRecycleView(listItems)
+        if (listItems.isNotEmpty()){
+            text_view_pelanggan_empty.visibility = View.GONE
+        }
+        else {
+            text_view_pelanggan_empty.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupRecycleView(listItems: ArrayList<Pelanggan>) {
+        recycler_view_pelanggan.apply {
+            adapter = PelangganAdapter(listItems, object : PelangganAdapter.PelangganListener{
+                override fun OnItemClicked(pelanggan: Pelanggan) {
+                    val intent = Intent(this@PelangganActivity, EditPelangganActivity::class.java)
+                    intent.putExtra(EditPelangganActivity(). EDIT_PELANGGAN_EXTRA, pelanggan)
+                    startActivity(intent)
+                }
+
+            })
+
+            layoutManager = LinearLayoutManager(this@PelangganActivity)
+        }
+    }
+
+
 
     override fun onResume() {
         super.onResume()
