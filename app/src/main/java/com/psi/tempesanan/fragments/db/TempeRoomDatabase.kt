@@ -4,13 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.psi.tempesanan.fragments.model.DetailTransaksi
 import com.psi.tempesanan.fragments.model.Pelanggan
 import com.psi.tempesanan.fragments.model.Tempe
-import com.psi.tempesanan.fragments.model.Transaksi
 
 
-@Database (entities = [Tempe::class, Pelanggan::class, Transaksi::class, DetailTransaksi::class], version = 4, exportSchema = false)
+@Database (entities = [Tempe::class, Pelanggan::class], version = 4, exportSchema = false)
 
 abstract class TempeRoomDatabase : RoomDatabase (){
     companion object {
@@ -35,9 +33,9 @@ abstract class TempeRoomDatabase : RoomDatabase (){
             }
         }
     }
-
-    abstract fun getTempeDao() : TempeDao
-    abstract fun getPelangganDao() : PelangganDao
-    abstract fun getTransaksiDao() : TransaksiDao
-    abstract fun getDetailTransaksiDao() : DetailTransaksiDao
+//    Transaksi::class, DetailTransaksi::class
+//    abstract fun getTempeDao() : TempeDao
+//    abstract fun getPelangganDao() : PelangganDao
+//    abstract fun getTransaksiDao() : TransaksiDao
+//    abstract fun getDetailTransaksiDao() : DetailTransaksiDao
 }
