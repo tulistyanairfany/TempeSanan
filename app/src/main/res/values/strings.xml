@@ -1,17 +1,34 @@
 <resources>
     <string name="app_name">Android Spinner</string>
-
-    <string-array name="city_list">
-        <item>Bangkok</item>
-        <item>London</item>
-        <item>Paris</item>
-        <item>Singapore</item>
-        <item>New York</item>
-        <item>Istanbul</item>
-        <item>Dubai</item>
-        <item>Kuala Lumpur</item>
-        <item>Hong Kong</item>
-        <item>Barcelona</item>
-
+    <string-array name="daftar_barang">
+        <item>Original 100gr</item>
+        <item>Original 220gr</item>
+        <item>Pedas Manis 100gr</item>
+        <item>Pedas Manis 220gr</item>
+        <item>Keju 100gr</item>
+        <item>Keju 220gr</item>
+        <item>Pizza 100gr</item>
+        <item>Pizza 220gr</item>
+        <item>Barbeque 100gr</item>
+        <item>Barbeque 220gr</item>
+        <item>Udang 100gr</item>
+        <item>Udang 220gr</item>
+        <item>Balado 100gr</item>
+        <item>Balado 220gr</item>
+        <item>Spaghetti 100gr</item>
+        <item>Spaghetti 220gr</item>
+        <item>Jagung Manis 100gr</item>
+        <item>Jagung Manis 220gr</item>
+        <item>Ayam Lada Hitam 100gr</item>
+        <item>Ayam Lada Hitam 220gr</item>
+        <item>Sambal Setan 100gr</item>
+        <item>Sambal Setan 220gr</item>
+    </string-array>
+    <string-array name="daftar_pelanggan">
+        <item>Sri Heryati</item>
+        <item>Pupuy Masturoh</item>
+        <item>Rudi Hartono</item>
+        <item>Eti Muhindisiah</item>
+        <item>Lilis Dewi Purwasih</item>
     </string-array>
 </resources>

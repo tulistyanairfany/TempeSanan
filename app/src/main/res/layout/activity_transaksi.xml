@@ -8,10 +8,21 @@
     tools:context=".fragments.TransaksiActivity">
 
     <TextView
+        android:id="@+id/text_view_transaksi_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaksi Empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/transaksi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="List Transaksi"
@@ -22,16 +33,40 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/search_button_transaksi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:background="@drawable/round_button"
+        android:text="Cari" />
+
+    <EditText
+        android:id="@+id/queryEditTexttransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/search_button_transaksi"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginLeft="10dp"
+        android:layout_toStartOf="@id/search_button_transaksi"
+        android:inputType="text"
+        android:lines="1" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_transaksi"
-        android:layout_width="340dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="30dp"
-
-
-        />
+        android:layout_width="380dp"
+        android:layout_height="450dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        tools:listitem="@layout/list_transaksi"/>
 
     <Button
         android:id="@+id/button_create_transaksi"
@@ -39,7 +74,7 @@
         android:layout_height="60dp"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="630dp"
-        android:background="#816A2F"
+        android:background="@drawable/round_button"
         android:fontFamily="@font/poppins_semibold"
         android:paddingLeft="16dp"
         android:paddingTop="8dp"
