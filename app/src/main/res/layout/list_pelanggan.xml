@@ -4,16 +4,29 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#D1CAB9"
-    android:padding="10dp"
-    android:layout_marginTop="10dp">
+    android:background="@drawable/round"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/pelanggan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37" />
 
     <TextView
         android:id="@+id/text_view_namapelanggan"
-        android:layout_width="82dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
         android:textColor="#B69C59"
         android:textSize="19sp"
         app:fontFamily="@font/poppins_semibold"
@@ -25,18 +38,17 @@
 
     <TextView
         android:id="@+id/text_view_nomortelp"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="35dp"
         android:textColor="#B69C59"
         android:textSize="13sp"
         app:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.75"
         tools:text="082133511888" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

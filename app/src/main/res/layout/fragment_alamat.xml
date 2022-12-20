@@ -47,7 +47,7 @@
         android:layout_height="100dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="400dp"
-        android:background="#816A2F" />
+        android:background="@drawable/round_frame" />
 
     <Button
         android:id="@+id/btnalamat"
@@ -55,7 +55,7 @@
         android:layout_height="60dp"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="530dp"
-        android:background="#816A2F"
+        android:background="@drawable/round_frame"
         android:fontFamily="@font/poppins_semibold"
         android:paddingLeft="16dp"
         android:paddingTop="8dp"

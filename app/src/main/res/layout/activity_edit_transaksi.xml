@@ -60,14 +60,6 @@
         android:layout_marginBottom="10dp"
         android:entries="@array/city_list" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="258dp"
-        android:onClick="getValues"
-        android:text="Get Values" />
 
     <TextView
         android:layout_marginTop="350dp"
