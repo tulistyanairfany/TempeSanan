@@ -11,6 +11,7 @@ import com.psi.tempesanan.fragments.model.Tempe
 @Database (entities = [Tempe::class, Pelanggan::class], version = 4, exportSchema = false)
 
 abstract class TempeRoomDatabase : RoomDatabase (){
+
     companion object {
         @Volatile
         private var INSTANCE: TempeRoomDatabase?= null
@@ -33,9 +34,6 @@ abstract class TempeRoomDatabase : RoomDatabase (){
             }
         }
     }
-//    Transaksi::class, DetailTransaksi::class
-//    abstract fun getTempeDao() : TempeDao
-//    abstract fun getPelangganDao() : PelangganDao
-//    abstract fun getTransaksiDao() : TransaksiDao
-//    abstract fun getDetailTransaksiDao() : DetailTransaksiDao
+    abstract fun getTempeDao() : TempeDao
+    abstract fun getPelangganDao() : PelangganDao
 }

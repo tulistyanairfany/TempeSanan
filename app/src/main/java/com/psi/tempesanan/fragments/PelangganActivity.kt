@@ -9,10 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.psi.tempesanan.R
 import com.psi.tempesanan.fragments.db.TempeRoomDatabase
 import com.psi.tempesanan.fragments.model.Pelanggan
-import com.psi.tempesanan.fragments.model.Tempe
-import kotlinx.android.synthetic.main.activity_edit_pelanggan.*
 import kotlinx.android.synthetic.main.activity_pelanggan.*
-import kotlinx.android.synthetic.main.activity_produk.*
 
 class PelangganActivity : AppCompatActivity(), View.OnClickListener {
 

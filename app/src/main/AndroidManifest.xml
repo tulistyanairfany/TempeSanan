@@ -4,12 +4,12 @@
     package="com.psi.tempesanan">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="TempeSanan"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TempeSanan"
-        tools:targetApi="31">
+        android:theme="@style/Theme.TempeSanan">
         <activity
             android:name=".fragments.EditProdukActivity"
             android:exported="false" />
