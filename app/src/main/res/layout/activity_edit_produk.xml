@@ -45,10 +45,11 @@
         android:id="@+id/edit_namaproduk"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="350dp"
-        android:background="@drawable/round_frame" />
+        android:background="@drawable/round_frame"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,9 +71,10 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
-        android:textColor="#FFFFFF"
+        android:paddingLeft="10dp"
         android:layout_marginTop="460dp"
-        android:background="@drawable/round_frame" />
+        android:background="@drawable/round_frame"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/button_save_produk"

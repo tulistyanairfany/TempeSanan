@@ -3,11 +3,15 @@ package com.psi.tempesanan.fragments
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
+import android.widget.SearchView
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.psi.tempesanan.R
+import com.psi.tempesanan.databinding.ActivityMainBinding
 import com.psi.tempesanan.fragments.db.TempeRoomDatabase
 import com.psi.tempesanan.fragments.model.Tempe
 import kotlinx.android.synthetic.main.activity_produk.*

@@ -16,6 +16,7 @@
         android:id="@+id/editpelanggan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="230dp"
         android:fontFamily="@font/poppins_semibold"
@@ -69,9 +70,10 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginLeft="30dp"
-        android:textColor="#FFFFFF"
         android:layout_marginTop="460dp"
-        android:background="@drawable/round_frame" />
+        android:background="@drawable/round_frame"
+        android:paddingLeft="10dp"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/button_save_pelanggan"
