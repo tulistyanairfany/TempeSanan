@@ -3,16 +3,14 @@ package com.psi.tempesanan.fragments.db
 import androidx.room.*
 import com.psi.tempesanan.fragments.model.Pelanggan
 import com.psi.tempesanan.fragments.model.Tempe
-import com.psi.tempesanan.fragments.model.Transaksi
-import com.psi.tempesanan.fragments.relation.PelangganWithTransaksis
 
 @Dao
 interface PelangganDao {
     @Insert
     fun insert(pelanggan: Pelanggan)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTransaksi(trasaksi: Transaksi)
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    suspend fun insertTransaksi(trasaksi: Transaksi)
 
     @Update
     fun update(pelanggan: Pelanggan)
@@ -26,8 +24,8 @@ interface PelangganDao {
     @Query("Select * FROM tabelpelanggan WHERE id = :id")
     fun getById(id: Int) : List<Pelanggan>
 
-    @Transaction
-    @Query("SELECT * FROM tabelpelanggan WHERE id = :id")
-    suspend fun getPelangganWithTransaksis(id: Int): List<PelangganWithTransaksis>
+//    @Transaction
+//    @Query("SELECT * FROM tabelpelanggan WHERE id = :id")
+//    suspend fun getPelangganWithTransaksis(id: Int): List<PelangganWithTransaksis>
 
 }

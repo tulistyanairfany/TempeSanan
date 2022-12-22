@@ -49,6 +49,19 @@
         android:layout_marginTop="400dp"
         android:background="@drawable/round_frame" />
 
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="430dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Jalan Sanan RT 03, Purwantoro, Blimbing, Kota Malang 65122"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+
     <Button
         android:id="@+id/btnalamat"
         android:layout_width="100dp"
