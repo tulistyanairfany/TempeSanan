@@ -1,6 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="370dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.37" />
 
     <TextView
-        android:id="@+id/text_view_namapelanggantrans"
+        android:id="@+id/namapelanggantrans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -37,18 +37,49 @@
         tools:text="Fany" />
 
     <TextView
-        android:id="@+id/text_view_tanggaltrans"
+        android:id="@+id/hargabarangtrans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="60dp"
         android:textColor="#B69C59"
-        android:textSize="13sp"
+        android:textSize="11sp"
         app:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Rp. 20.000" />
+
+
+    <TextView
+        android:id="@+id/namabarangtrans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#B69C59"
+        android:textSize="12sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Original 100 gr" />
+
+    <TextView
+        android:id="@+id/tanggaltrans"
+        android:layout_width="70dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
+        android:textColor="#B69C59"
+        android:textSize="11sp"
+        app:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
         tools:text="20-12-2022" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

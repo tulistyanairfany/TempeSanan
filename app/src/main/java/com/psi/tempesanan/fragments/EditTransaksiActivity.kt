@@ -3,20 +3,37 @@ package com.psi.tempesanan.fragments
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.psi.tempesanan.R
+import com.psi.tempesanan.fragments.db.PelangganDao
+import com.psi.tempesanan.fragments.db.TempeRoomDatabase
+import com.psi.tempesanan.fragments.db.TransaksiDao
+import com.psi.tempesanan.fragments.model.Pelanggan
+import com.psi.tempesanan.fragments.model.Transaksi
+import kotlinx.android.synthetic.main.activity_edit_pelanggan.*
 import kotlinx.android.synthetic.main.activity_edit_transaksi.*
+import kotlinx.android.synthetic.main.activity_transaksi.*
 import java.util.*
 
 
 class EditTransaksiActivity : AppCompatActivity() {
 
+    val EDIT_TRANSAKSI_EXTRA = "edit_transaksi_extra"
+    private lateinit var transaksi: Transaksi
+    private var isUpdate = false
+    private lateinit var database: TempeRoomDatabase
+    private lateinit var dao: TransaksiDao
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_transaksi)
+
+        database = TempeRoomDatabase.getDatabase(applicationContext)
+        dao = database.getTransaksiDao()
 
         val mPilih = findViewById<TextView>(R.id.txtview_listbarang)
 
@@ -78,11 +95,11 @@ class EditTransaksiActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, currentItem + " " + isChecked, Toast.LENGTH_SHORT).show()
             }
             builder.setPositiveButton("Pilih") { dialog, which ->
-               "Produk : \n" .also { mPilih.text = it }
+                "Produk : " .also { mPilih.text = it }
                 for (i in checkedColorsArray.indices) {
                     val checked = checkedColorsArray[i]
                     if (checked) {
-                        (mPilih.text.toString() + colorsList[i] + "\n").also { mPilih.text = it }
+                        (mPilih.text.toString() + colorsList[i] + " , ").also { mPilih.text = it }
                     }
                 }
             }
@@ -108,8 +125,68 @@ class EditTransaksiActivity : AppCompatActivity() {
         }
 
 
+        if (intent.getParcelableExtra<Transaksi>(EDIT_TRANSAKSI_EXTRA) != null){
+            button_hapus_transaksi.visibility = View.VISIBLE
+            isUpdate = true
+            transaksi = intent.getParcelableExtra(EDIT_TRANSAKSI_EXTRA)!!
+            edit_tgltransaksi.setText(transaksi.tanggaltrans)
+            spinner2.setSelection(transaksi.namapelanggantrans.length)
+            txtview_listbarang.setText(transaksi.namabarangtrans)
+            edit_transaksitotal.setText(transaksi.hargabarangtrans)
+        }
+        button_save_transaksi.setOnClickListener {
+
+            val tanggaltrans = edit_tgltransaksi.text.toString()
+            val namapelanggantrans = spinner2.selectedItem.toString()
+            val namabarangtrans = txtview_listbarang.text.toString()
+            val hargabarangtrans = edit_transaksitotal.text.toString()
+
+            if (tanggaltrans.isEmpty() && namapelanggantrans.isEmpty() && namabarangtrans.isEmpty() && hargabarangtrans.isEmpty()) {
+                Toast.makeText(
+                    applicationContext,
+                    "Data yang Anda masukkan tidak lengkap",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                if (isUpdate) {
+                    saveTransaksi(
+                        Transaksi(
+                            id_transaksi = transaksi.id_transaksi,
+                            tanggaltrans = tanggaltrans,
+                            namapelanggantrans = namapelanggantrans,
+                            namabarangtrans = namabarangtrans,
+                            hargabarangtrans = hargabarangtrans
+                        )
+                    )
+                }
+                else {
+                    saveTransaksi(Transaksi(tanggaltrans = tanggaltrans, namapelanggantrans = namapelanggantrans, namabarangtrans = namabarangtrans, hargabarangtrans = hargabarangtrans))
+        }
+            }
+            finish()
+        }
+        button_hapus_transaksi.setOnClickListener {
+            deleteTransaksi(transaksi)
+            finish()
+        }
+
     }
 
 
+    private fun saveTransaksi(transaksi: Transaksi) {
+
+        if (dao.getById(transaksi.id).isEmpty()){
+            dao.insert(transaksi)
+        }
+        else{
+            dao.update(transaksi)
+        }
+        Toast.makeText(applicationContext, "BERHASIL DISIMPAN", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun deleteTransaksi(transaksi: Transaksi){
+        dao.delete(transaksi)
+        Toast.makeText(applicationContext, "BERHASIL DIHAPUS", Toast.LENGTH_SHORT).show()
+    }
 
 }

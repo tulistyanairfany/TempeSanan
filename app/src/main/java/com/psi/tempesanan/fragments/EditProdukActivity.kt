@@ -61,8 +61,8 @@ class EditProdukActivity : AppCompatActivity() {
                 }
             }
             finish()
-
         }
+
         button_hapus_produk.setOnClickListener {
             deleteProduk(tempe)
             finish()
